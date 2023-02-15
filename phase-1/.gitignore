@@ -29,5 +29,5 @@ hs_err_pid*
 .DS_Store
 
 *.iml
-phase-1/comandos.txt
-phase-1/src/main/resources/.env
+*.env
+comandos.txt
