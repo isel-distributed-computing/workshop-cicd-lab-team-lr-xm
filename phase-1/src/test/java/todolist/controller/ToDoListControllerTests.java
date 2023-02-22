@@ -67,7 +67,7 @@ public class ToDoListControllerTests {
         ResultActions result =
             mockMvc.perform(post("/todolist")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .header("Authorization", "Bearer: " + token)
+                            .header("Authorization", "Bearer " + token)
                             .content(requestBody))
                     .andExpect(status().isOk());
 
@@ -94,7 +94,7 @@ public class ToDoListControllerTests {
 
         // Act & Assert
         mockMvc.perform(delete("/todolist/"+id)
-                        .header("Authorization", "Bearer: " + token))
+                        .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(id)))
                 .andExpect(jsonPath("$.username", is("jose")))
@@ -115,7 +115,7 @@ public class ToDoListControllerTests {
         // Act & Assert
         ResultActions result =
             mockMvc.perform(get("/todolist/"+username)
-                            .header("Authorization", "Bearer: " + token))
+                            .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk());
 
         MvcResult mvcResult = result.andReturn();
